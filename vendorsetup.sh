@@ -13,7 +13,7 @@
 	echo -e "\x1b[96msky: 开始添加OrangeFox Vars...\x1b[m"
 	## 构建信息
 	# 设置显示在关于页面里的维护人员名称
-	export OF_MAINTAINER=HuaJi-QWQ(LiZhiYuan)
+	export OF_MAINTAINER=LiZhiYuan
 	# 设置版本号为日期
 	export FOX_VERSION=$(date +%y.%m.%d)
 	# 当你需要标记出这个recovery是一个特殊版本时使用
@@ -95,7 +95,7 @@
 
 	## 调整刷入zip刷机包时刷机脚本要检测的相关属性
 	# 设置一个很老的build时间，用于解决某些ROM例如MIUI刷机脚本里的防回滚保护检测
-	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1546300800"; # Tuesday, January 1, 2019 12:00:00 AM GMT+00:00
+	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1546300800"; # Tuesday, January 1, 2019 11:45:14 AM GMT+00:00
 
 	# 为“快速备份”指定默认选择的分区
 	export OF_QUICK_BACKUP_LIST="/boot;/data;"
@@ -112,7 +112,7 @@
 	# 标记该设备肯定是原生Android 11+虚拟A/B（“VAB”）设备
 	export FOX_VIRTUAL_AB_DEVICE=1
 	# 指定super分区的完整大小，修复部分设备刷入miui rom失败，VAB设备专用变量
-	export OF_DYNAMIC_FULL_SIZE=9126805504
+	export OF_DYNAMIC_FULL_SIZE=6442450944
 	# ensure that /sdcard is bind-unmounted before f2fs data repair or format
 	export OF_UNBIND_SDCARD_F2FS=1
 	# 设置默认时区为北京时间
