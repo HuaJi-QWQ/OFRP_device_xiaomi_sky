@@ -5,14 +5,14 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 # 关于橙狐变量详见 fox_12.1/vendor/recovery/orangefox_build_vars.txt
-
+	export TW_DEFAULT_LANGUAGE="zh_CN"
 	export LC_ALL="C"
 	export ALLOW_MISSING_DEPENDENCIES=true
 
 	echo -e "\x1b[96msky: 开始添加OrangeFox Vars...\x1b[m"
 	## 构建信息
 	# 设置显示在关于页面里的维护人员名称
-	export OF_MAINTAINER=LiZhiYuan
+	export OF_MAINTAINER=LazyBones
 	# 设置版本号为日期
 	export FOX_VERSION=$(date +%y.%m.%d)
 	# 当你需要标记出这个recovery是一个特殊版本时使用
@@ -79,7 +79,7 @@
 	## 界面显示设定
 	# 设置屏幕高度，状态栏高度，状态栏左右边距
 	# 由于橙狐默认屏幕比例是16：9,所以应设置屏幕高度为屏幕比例换算成n：9之后，n*120
-	export OF_SCREEN_H=2400
+	export OF_SCREEN_H=2460
 	# 状态栏高度（默认72像素，刘海屏设备按需设置）
 	export OF_STATUS_H=90
 	# 状态栏左右避让宽度（默认20像素，顶部圆角设备按需设置）
@@ -111,11 +111,15 @@
 	# 标记该设备肯定是原生Android 11+虚拟A/B（“VAB”）设备
 	export FOX_VIRTUAL_AB_DEVICE=1
 	# 指定super分区的完整大小，修复部分设备刷入miui rom失败，VAB设备专用变量
-	export OF_DYNAMIC_FULL_SIZE=6442450944
+	export OF_DYNAMIC_FULL_SIZE=6979321856
 	# ensure that /sdcard is bind-unmounted before f2fs data repair or format
 	export OF_UNBIND_SDCARD_F2FS=1
 	# 设置默认时区为北京时间
 	export OF_DEFAULT_TIMEZONE="TAIST-8;TAIDT"
+	# 支持通过修补vbmeta/vbmeta_system禁用avb2.0
+	export OF_SUPPORT_VBMETA_AVB2_PATCHING=1
+	# 安装压缩包页面选项的最大数量，调小这个值会显示滚动条（大于4小于9时生效，默认为4）
+	export OF_OPTIONS_LIST_NUM=6
 
 	F=$(find "device" -name "sky")
 	# 修改启动画面背景色为#000000
